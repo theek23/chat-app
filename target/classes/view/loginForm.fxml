@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="331.0" prefWidth="546.0" style="-fx-background-color: #cfd1d0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+   <children>
+      <Pane layoutX="16.0" layoutY="14.0" prefHeight="304.0" prefWidth="514.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="77.0" fitWidth="79.0" layoutX="234.0" layoutY="64.0">
+         <image>
+            <Image url="@../img/user-icon.gif" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtName" focusTraversable="false" layoutX="77.0" layoutY="204.0" onAction="#txtNameOnAction" prefHeight="32.0" prefWidth="284.0" promptText="Enter Your Name" style="-fx-background-radius: 10;" />
+      <JFXButton fx:id="joinChatBtn" layoutX="390.0" layoutY="204.0" onAction="#joinChatBtnOnAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #eef0a5; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="JOIN CHAT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

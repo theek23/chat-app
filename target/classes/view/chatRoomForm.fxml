@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="609.0" prefWidth="419.0" style="-fx-background-color: #229ED9;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ChatRoomController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutX="20.0" layoutY="63.0" prefHeight="482.0" prefWidth="380.0" style="-fx-background-color: #74b9ff; -fx-border-color: black;" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="vBoxMsg" prefHeight="482.0" prefWidth="380.0" />
+         </content>
+      </ScrollPane>
+      <Text fill="#cfeaff" layoutX="172.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TelChat">
+         <font>
+            <Font name="Segoe UI Black" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="52.0" fitWidth="55.0" layoutX="20.0" layoutY="8.0">
+         <image>
+            <Image url="@../img/icon.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtField" layoutX="87.0" layoutY="555.0" onAction="#txtFieldOnAction" prefHeight="40.0" prefWidth="266.0" style="-fx-background-radius: 10,10,0,0; -fx-border-color: black; -fx-border-radius: 10,10,0,0;">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="sendBtn" contentDisplay="GRAPHIC_ONLY" layoutX="354.0" layoutY="555.0" onAction="#sendBtnOnAction" prefHeight="40.0" prefWidth="40.0">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../img/send-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Pane layoutX="20.0" layoutY="555.0" prefHeight="40.0" prefWidth="67.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="560.0" onMouseClicked="#emojiIconOnAction">
+         <image>
+            <Image url="@../img/emoji-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView accessibleRole="BUTTON" fitHeight="30.0" fitWidth="30.0" layoutX="50.0" layoutY="560.0" onMouseClicked="#sendFileOnAction">
+         <image>
+            <Image url="@../img/folder-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="358.0" layoutY="14.0">
+         <image>
+            <Image url="@../img/profile-icon.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="nameTxt" fill="#cfeaff" layoutX="347.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Theekshana">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="EmojiPane" layoutX="35.0" layoutY="365.0" prefHeight="174.0" prefWidth="149.0" visible="false">
+         <children>
+            <GridPane alignment="CENTER" hgap="5.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="160.0" prefWidth="135.0" vgap="7.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#Heart" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/emojiF/1.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#sadMood" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../img/emojiF/2.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#normalMood" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@../img/emojiF/3.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#Hehe" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../img/emojiF/4.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="53.0" onMouseClicked="#ToungOut" pickOnBounds="true" preserveRatio="true" smooth="false" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../img/emojiF/7.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#sick" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../img/emojiF/6.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#Hiks" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../img/emojiF/8.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#soSad" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../img/emojiF/9.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#haha" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../img/emojiF/11.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#Emotional" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../img/emojiF/15.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#bad" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../img/emojiF/12.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#money" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <image>
+                        <Image url="@../img/emojiF/13.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#satisfied" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../img/emojiF/14.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#ohh" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../img/emojiF/5.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="51.0" onMouseClicked="#wow" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <image>
+                        <Image url="@../img/emojiF/10.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
