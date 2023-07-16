@@ -136,7 +136,7 @@ public class ChatRoomController extends Thread {
 
                         tempFlow.setStyle("-fx-color: rgb(239,242,255);" +
                                 "-fx-background-color: rgb(15,125,242);" +
-                                " -fx-background-radius: 10px");
+                                " -fx-background-radius: 7px");
                         tempFlow.setPadding(new Insets(3,10,3,10));
                     }
 
@@ -168,7 +168,7 @@ public class ChatRoomController extends Thread {
 
                         flow2.setStyle("-fx-color: rgb(239,242,255);" +
                                 "-fx-background-color: rgb(191,241,9);" +
-                                "-fx-background-radius: 10px");
+                                "-fx-background-radius: 7px");
                         flow2.setPadding(new Insets(3,10,3,10));
 
                     }

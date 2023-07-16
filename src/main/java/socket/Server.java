@@ -6,7 +6,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Server {
-    private static ArrayList<Client> clients = new ArrayList<>();
+    private static ArrayList<ClientHandler> clientHandlers = new ArrayList<>();
     public static void main(String[] args) throws IOException{
         boolean status = true;
         ServerSocket serverSocket = new ServerSocket(3000);
@@ -16,9 +16,9 @@ public class Server {
             System.out.println("Waiting for client ....");
             socket = serverSocket.accept();
             System.out.println("Client Connected");
-            Client clientThred = new Client(socket, clients);
-            clients.add(clientThred);
-            clientThred.start();
+            ClientHandler clientHandlerThred = new ClientHandler(socket, clientHandlers);
+            clientHandlers.add(clientHandlerThred);
+            clientHandlerThred.start();
         }
     }
 }

@@ -7,20 +7,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="331.0" prefWidth="546.0" style="-fx-background-color: #cfd1d0;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
+<AnchorPane prefHeight="331.0" prefWidth="546.0" style="-fx-background-color: #229ED9;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFormController">
    <children>
-      <Pane layoutX="16.0" layoutY="14.0" prefHeight="304.0" prefWidth="514.0" style="-fx-background-color: white;" />
-      <ImageView fitHeight="77.0" fitWidth="79.0" layoutX="234.0" layoutY="64.0">
-         <image>
-            <Image url="@../img/user-icon.gif" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtName" focusTraversable="false" layoutX="77.0" layoutY="204.0" onAction="#txtNameOnAction" prefHeight="32.0" prefWidth="284.0" promptText="Enter Your Name" style="-fx-background-radius: 10;" />
-      <JFXButton fx:id="joinChatBtn" layoutX="390.0" layoutY="204.0" onAction="#joinChatBtnOnAction" prefHeight="32.0" prefWidth="79.0" style="-fx-background-color: #eef0a5; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10;" text="JOIN CHAT">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
+      <Pane layoutX="16.0" layoutY="14.0" prefHeight="304.0" prefWidth="514.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+         <children>
+            <TextField fx:id="txtName" focusTraversable="false" layoutX="61.0" layoutY="207.0" onAction="#txtNameOnAction" onKeyPressed="#KeyPressed" prefHeight="36.0" prefWidth="284.0" promptText="Enter Your Name" stylesheets="@../style/textfield.css" />
+            <JFXButton fx:id="joinChatBtn" layoutX="366.0" layoutY="207.0" onAction="#joinChatBtnOnAction" prefHeight="36.0" prefWidth="103.0" stylesheets="@../style/button.css" text="JOIN CHAT">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="77.0" fitWidth="79.0" layoutX="218.0" layoutY="82.0">
+               <image>
+                  <Image url="@../img/user-icon.gif" />
+               </image>
+            </ImageView>
+            <Text fill="#0c96ff" layoutX="218.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#63beff" layoutX="250.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat">
+               <font>
+                  <Font name="Segoe UI Black" size="20.0" />
+               </font>
+            </Text>
+         </children></Pane>
    </children>
 </AnchorPane>

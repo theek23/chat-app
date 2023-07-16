@@ -4,16 +4,16 @@ import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Client extends Thread{
-    private ArrayList<Client> clients;
+public class ClientHandler extends Thread{
+    private ArrayList<ClientHandler> clientHandlers;
     private Socket socket;
     private BufferedReader reader;
     private PrintWriter writer;
 
-    public Client(Socket socket, ArrayList<Client> clients) {
+    public ClientHandler(Socket socket, ArrayList<ClientHandler> clientHandlers) {
         try {
             this.socket = socket;
-            this.clients = clients;
+            this.clientHandlers = clientHandlers;
             this.reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.writer = new PrintWriter(socket.getOutputStream(),true);
         } catch (IOException e) {
@@ -27,8 +27,8 @@ public class Client extends Thread{
                 if (msg.equalsIgnoreCase("String")){
                     break;
                 }
-                for (Client client : clients){
-                    client.writer.println(msg);
+                for (ClientHandler clientHandler : clientHandlers){
+                    clientHandler.writer.println(msg);
                 }
             }
         } catch (IOException e) {

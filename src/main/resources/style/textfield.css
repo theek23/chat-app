@@ -1,0 +1,27 @@
+.text-field {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #A8A8A8;
+    -fx-padding: 8px;
+    -fx-border-radius: 7px;
+}
+
+.text-field:hover {
+    -fx-background-color: #dff9fb;
+    -fx-cursor: text;
+}
+
+.text-field:focused {
+    -fx-background-color: #c7ecee;
+    -fx-border-color: #1777B4;
+}
+
+.text-field:disabled {
+    -fx-opacity: 0.6;
+}
+
+.text-field:disabled:hover {
+    -fx-background-color: #b2bec3;
+    -fx-cursor: default;
+}
